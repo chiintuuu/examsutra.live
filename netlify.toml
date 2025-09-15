@@ -1,0 +1,5 @@
+# This rule tells Netlify how to handle the subdomain
+[[redirects]]
+  from = "http://uttaranchal.examsutra.live/*"
+  to = "/uttaranchal/:splat"
+  status = 200fe
