@@ -2,4 +2,4 @@
 [[redirects]]
   from = "http://uttaranchal.examsutra.live/*"
   to = "/uttaranchal/:splat"
-  status = 200fe
+  status = 200
