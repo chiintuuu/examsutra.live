@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExamSutra - Unlocking Soon!</title>
+    
+     <link rel="icon" type="image/png" href="images/favicon.png">
+
     <link rel="stylesheet" href="css/style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body class="launch-page">
 
@@ -24,11 +26,17 @@
             The final chapter is being written. Our library of previous year papers and exam resources is almost ready for you.
         </p>
 
+        <form id="notify-form" class="launch-form">
+            <input type="email" name="email" placeholder="Enter your email to be notified" required>
+            <button type="submit">Notify Me</button>
+        </form>
+        <div id="form-message"></div>
         <div class="brand-logo">
             EXAMSUTRA
         </div>
 
     </div>
 
+    <script src="js/launch.js"></script>
 </body>
 </html>

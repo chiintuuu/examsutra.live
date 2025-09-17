@@ -1,127 +1,198 @@
-/* --- New Impressive Launch Page Styles --- */
+/* --- New Impressive Launch Page Styles --- */ 
 
-/* We use a specific class on the body to not interfere with your main site styles */
-body.launch-page {
-    background-color: var(--page-bg);
+ /* We use a specific class on the body to not interfere with your main site styles */ 
+ body.launch-page { 
+     background-color: var(--page-bg); 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+     min-height: 100vh; 
+     margin: 0; 
+     overflow: hidden; 
+     text-align: center; 
+ } 
+
+ .launch-container { 
+     max-width: 600px; 
+     padding: 40px; 
+     animation: fadeIn 1.5s ease-out; 
+ } 
+
+ /* Keyhole Animation */ 
+ .keyhole-container { 
+     position: relative; 
+     width: 120px; 
+     height: 120px; 
+     margin: 0 auto 30px auto; 
+     display: flex; 
+     justify-content: center; 
+     align-items: center; 
+ } 
+
+ .keyhole-container::before { 
+     content: ''; 
+     position: absolute; 
+     width: 100%; 
+     height: 100%; 
+     background: radial-gradient(circle, var(--header-bg) 20%, transparent 70%); 
+     border-radius: 50%; 
+     animation: pulse-glow 3s infinite ease-in-out; 
+     z-index: -1; 
+ } 
+
+ .keyhole-svg { 
+     width: 80px; 
+     height: auto; 
+     fill: none; 
+     stroke: var(--examsutra-color); 
+     stroke-width: 5px; 
+     filter: drop-shadow(0 0 10px rgba(126, 61, 255, 0.5)); 
+ } 
+
+ @keyframes pulse-glow { 
+     0% { 
+         transform: scale(0.9); 
+         opacity: 0.7; 
+     } 
+     50% { 
+         transform: scale(1.2); 
+         opacity: 1; 
+     } 
+     100% { 
+         transform: scale(0.9); 
+         opacity: 0.7; 
+     } 
+ } 
+
+
+ /* Text Styles */ 
+ .launch-headline { 
+     font-family: var(--font-poppins); 
+     font-size: 2.8rem; 
+     font-weight: 700; 
+     color: var(--text-primary); 
+     margin: 0 0 15px 0; 
+     animation: fadeInUp 1s ease-out 0.5s; 
+     animation-fill-mode: both; /* Keeps state after animation */ 
+ } 
+
+ .launch-subtext { 
+     font-family: var(--font-poppins); 
+     font-size: 1.1rem; 
+     color: var(--text-secondary); 
+     line-height: 1.7; 
+     margin: 0 0 40px 0; 
+     animation: fadeInUp 1s ease-out 0.8s; 
+     animation-fill-mode: both; 
+ } 
+
+ .brand-logo { 
+     font-family: var(--font-hellprint); 
+     font-size: 3rem; 
+     color: var(--examsutra-color); 
+     animation: fadeInUp 1s ease-out 1.1s; 
+     animation-fill-mode: both; 
+ } 
+
+
+ /* General Animations for a smooth entry */ 
+ @keyframes fadeIn { 
+     from { opacity: 0; } 
+     to { opacity: 1; } 
+ } 
+
+ @keyframes fadeInUp { 
+     from { 
+         opacity: 0; 
+         transform: translateY(20px); 
+     } 
+     to { 
+         opacity: 1; 
+         transform: translateY(0); 
+     } 
+ } 
+
+
+ /* Responsive Adjustments */ 
+ @media (max-width: 768px) { 
+     .launch-headline { 
+         font-size: 2.2rem; 
+     } 
+     .launch-subtext { 
+         font-size: 1rem; 
+     } 
+     .brand-logo { 
+         font-size: 2.5rem; 
+     } 
+ } 
+
+/* --- Launch Form Styles --- */
+.launch-form {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack input and button on small screens */
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    text-align: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out 1.4s;
+    animation-fill-mode: both;
 }
 
-.launch-container {
-    max-width: 600px;
-    padding: 40px;
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* Keyhole Animation */
-.keyhole-container {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 30px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.keyhole-container::before {
-    content: '';
-    position: absolute;
+.launch-form input {
     width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, var(--header-bg) 20%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse-glow 3s infinite ease-in-out;
-    z-index: -1;
-}
-
-.keyhole-svg {
-    width: 80px;
-    height: auto;
-    fill: none;
-    stroke: var(--examsutra-color);
-    stroke-width: 5px;
-    filter: drop-shadow(0 0 10px rgba(126, 61, 255, 0.5));
-}
-
-@keyframes pulse-glow {
-    0% {
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
-}
-
-
-/* Text Styles */
-.launch-headline {
+    max-width: 350px;
+    padding: 15px 25px;
+    border: 2px solid var(--header-bg);
+    border-radius: 50px;
     font-family: var(--font-poppins);
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0 0 15px 0;
-    animation: fadeInUp 1s ease-out 0.5s;
-    animation-fill-mode: both; /* Keeps state after animation */
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
-.launch-subtext {
+.launch-form input:focus {
+    border-color: #8c52ff; /* Use the new color for focus border */
+    box-shadow: 0 0 10px rgba(140, 82, 255, 0.3);
+}
+
+.launch-form button {
+    padding: 15px 40px;
+    background-color: #8c52ff; /* Your requested color */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
     font-family: var(--font-poppins);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(140, 82, 255, 0.4); /* Shadow matches the new color */
+}
+
+.launch-form button:hover {
+    background-color: #7a48e6; /* A slightly darker shade for hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(140, 82, 255, 0.5);
+}
+
+.launch-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+#form-message {
     font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin: 0 0 40px 0;
-    animation: fadeInUp 1s ease-out 0.8s;
-    animation-fill-mode: both;
+    font-weight: 500;
+    min-height: 25px;
+    margin-top: 10px;
 }
 
-.brand-logo {
-    font-family: var(--font-hellprint);
-    font-size: 3rem;
-    color: var(--examsutra-color);
-    animation: fadeInUp 1s ease-out 1.1s;
-    animation-fill-mode: both;
-}
-
-
-/* General Animations for a smooth entry */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .launch-headline {
-        font-size: 2.2rem;
-    }
-    .launch-subtext {
-        font-size: 1rem;
-    }
-    .brand-logo {
-        font-size: 2.5rem;
+/* Make form horizontal on larger screens */
+@media (min-width: 576px) {
+    .launch-form {
+        flex-direction: row;
+        justify-content: center;
     }
 }
